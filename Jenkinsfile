@@ -1,11 +1,11 @@
 node {
   stage('Build Docker Image'){
-    parallel (
-      stage('Image 1') {
-        echo 'Hello from Image1'
+  parallel(
+      a: {
+        echo "This is branch a"
       },
-      stage('Image 2'){
-        echo 'Hello from Image 2'
+      b: {
+        echo "This is branch b"
       }
     )
   }
