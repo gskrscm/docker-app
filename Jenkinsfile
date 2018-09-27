@@ -7,7 +7,7 @@ node {
         try {
           sh 'docker rmi gskrscm/sonarqube_image_1'
         }
-        catch{
+        catch(error){
           echo 'Image1 is not there'
         }
         sh "docker run -itd --name sonarqube1 sonarqube"
@@ -18,7 +18,7 @@ node {
         try {
           sh 'docker rmi gskrscm/sonarqube_image_2'
         }
-        catch{
+        catch(error){
           echo 'Image2 is not there'
         }
         sh "docker pull sonarqube"
