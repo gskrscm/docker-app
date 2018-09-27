@@ -10,7 +10,7 @@ node {
       b: {
         echo "Build Myweb2"
         sh "docker pull sonarqube"
-        sh "docker run -itd --name sonarqube2 sonarqibe"
+        sh "docker run -itd --name sonarqube2 sonarqube"
         sh "docker commit sonarqube2 gskrscm/sonarqube_image_2"
       }
     )
