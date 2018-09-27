@@ -11,7 +11,7 @@ node {
         catch(error){
           echo 'Image1 is not there'
         }
-        sh "docker run -itd --name -p 9001:9000 -p 9092:9092 sonarqube1 sonarqube"
+        sh "docker run -itd --name -p 9001:9000 sonarqube1 sonarqube"
         sh "docker commit sonarqube1 gskrscm/sonarqube_image_1"
       },
       b: {
@@ -23,7 +23,7 @@ node {
           echo 'Image2 is not there'
         }
         sh "docker pull sonarqube"
-        sh "docker run -itd --name -p 90002:9000 -p 9093:9092 sonarqube2 sonarqube"
+        sh "docker run -itd --name -p 90002:9000 sonarqube2 sonarqube"
         sh "docker commit sonarqube2 gskrscm/sonarqube_image_2"
       }
     )
