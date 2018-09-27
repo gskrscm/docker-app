@@ -2,10 +2,12 @@ node {
   stage('Build Docker Image'){
   parallel(
       a: {
-        echo "This is branch a"
+        echo "Build Myweb1"
+        sh "docker build -t 'gskrscm/myweb1:1.0.0' ."
       },
       b: {
-        echo "This is branch b"
+        echo "Build Myweb2"
+        sh "docker build -t 'gskrscm/myweb2:1.0.0' Dockerfile2"
       }
     )
   }
